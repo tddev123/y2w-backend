@@ -1,13 +1,16 @@
 from flask import Flask
 from .routes.download import download_bp
 
+# Create the app instance
+app = create_app()
+
+
 def create_app():
     app = Flask(__name__)
     app.register_blueprint(download_bp, url_prefix="/api")
     return app
 
-# Create the app instance
-app = create_app()
+
 
 # Run the app
 if __name__ == '__main__':
